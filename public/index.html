@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ee">
+  <meta name="description" content="한 문항에 답하고 결과를 함께 확인하는 간단한 설문조사">
+  <title>한 줄 설문</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>한 줄 설문</span></div>
+      <span class="header-tag">ONE QUESTION, EVERY VOICE</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-top"><span class="eyebrow"><span class="live-dot"></span> 진행 중인 설문</span><span class="step">01 / 01</span></div>
+        <h1 id="page-title">잠시만 기다려 주세요.</h1>
+        <p id="survey-description">설문을 불러오고 있어요.</p>
+      </section>
+
+      <section class="survey-card" aria-label="설문 응답 및 결과">
+        <div class="card-heading"><span>YOUR ANSWER</span><span id="response-count">응답 집계 중</span></div>
+        <form id="vote-form" hidden>
+          <fieldset><legend class="sr-only">답변 하나 선택</legend><div id="options" class="options"></div></fieldset>
+          <button id="submit-button" class="primary-button" type="submit" disabled><span>응답 제출하기</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+        </form>
+
+        <div id="results" hidden>
+          <div class="result-heading"><div><span class="section-kicker">LIVE RESULTS</span><h2>지금까지의 응답</h2></div><span id="result-total" class="result-total">0명 참여</span></div>
+          <div id="result-list" class="result-list"></div>
+          <button id="edit-button" class="text-button" type="button">응답하기</button>
+        </div>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </section>
+
+      <div class="below-card"><p>이 브라우저에서는 응답을 다시 선택할 수 있어요.<br>다시 선택하면 이전 응답을 바꿉니다.</p><button id="share-button" class="share-button" type="button"><span class="share-icon" aria-hidden="true">↗</span> 설문 링크 복사</button></div>
+    </main>
+
+    <footer>답변은 이름 없이 저장됩니다. <span>·</span> 함께 만든 작은 의견</footer>
+  </div>
+</body>
+</html>
